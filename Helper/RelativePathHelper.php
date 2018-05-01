@@ -17,7 +17,7 @@ class RelativePathHelper
 
         $fromParts = explode('/', $from);
         $toParts = explode('/', $to);
-        $relPath = $to;
+        $relPath = $toParts;
 
         foreach ($fromParts as $depth => $dir) {
             // find first non-matching dir
