@@ -1,0 +1,17 @@
+{
+    "name": "mwltr/ext-magento2-mwltr-filesystem-filedriver",
+    "license": "GPL-3.0",
+    "description": "Dummy Module",
+    "require": {
+        "php": "~7.1.0"
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mwltr\\FilesystemFileDriver\\": ""
+        }
+    }
+}
