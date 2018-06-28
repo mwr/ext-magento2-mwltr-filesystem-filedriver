@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @copyright see LICENSE
  */
@@ -26,15 +27,15 @@ class RelativePathHelper
                 array_shift($relPath);
             } else {
                 // get number of remaining dirs to $from
-                $remaining = count($fromParts) - $depth;
+                $remaining = \count($fromParts) - $depth;
                 if ($remaining > 1) {
                     // add traversals up to first matching dir
                     $padLength = (count($relPath) + $remaining - 1) * -1;
                     $relPath = array_pad($relPath, $padLength, '..');
                     break;
-                } else {
-                    $relPath[0] = './' . $relPath[0];
                 }
+
+                $relPath[0] = './' . $relPath[0];
             }
         }
 
