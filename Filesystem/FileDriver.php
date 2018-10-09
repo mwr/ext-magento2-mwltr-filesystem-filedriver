@@ -32,6 +32,9 @@ class FileDriver extends File
 
     public function getRelativePath($basePath, $path = null)
     {
+        // Fixing paths and working around an issue where false is passed in $path, which leads to an error wich strpos
+        $path = $this->fixSeparator($path);
+
         // there are some occasions where magento uses this method with $path being a sub-path to $basePath
         // The releative path calculation only works with two absolute path.
         // This is basically a fallback to the stanard magento2 behaviour
